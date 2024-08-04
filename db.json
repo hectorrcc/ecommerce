@@ -1,0 +1,113 @@
+{
+  "products": [
+    {
+      "image": "https://http2.mlstatic.com/D_NQ_NP_835513-MLB77742332859_072024-O.webp",
+      "description": "Cargamos el Revolution 7 con el tipo de amortiguación y soporte lujoso que podría cambiar tu mundo de correr. Elegante como siempre, cómodo cuando la goma se encuentra con la carretera y con buen rendimiento al ritmo deseado, es una evolución de un favorito de los fanáticos que ofrece una conducción suave y fluida.",
+      "category": "Deportivo",
+      "quantity": 25,
+      "price": 80,
+      "name": "Nike Revolution",
+      "id": "1",
+      "rating": 5
+    },
+    {
+      "id": "2",
+      "name": "Under Armour Charged",
+      "description": "Zapatillas para correr unisex Under Armour Charged Wing! Con una parte superior más ligera y transpirable, su estructura está fabricada en tejido. Doble frente, aportando un aspecto moderno y minimalista.",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_832198-MLB76755487436_062024-O.webp",
+      "price": 40,
+      "quantity": 40,
+      "rating": 3.5,
+      "category": "Deportivo"
+    },
+    {
+      "id": "3",
+      "name": "Puma Bmw Wired Cage",
+      "description": "Las zapatillas Puma BMW Wired Cage para hombre 307413 son un calzado deportivo para hombre con un diseño atrevido y tecnología de vanguardia. Cuenta con una parte superior fabricada en material sintético resistente, que garantiza durabilidad y estabilidad al caminar.",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_772214-MLB72258709833_102023-O.webp",
+      "price": 100,
+      "quantity": 20,
+      "rating": 3.7,
+      "category": "Deportivo"
+    },
+    {
+      "id": "4",
+      "name": "Puma Anzarun Lite",
+      "description": "¡Prepárate para alcanzar nuevas alturas con las zapatillas Anzarun Lite de Puma! Combinando estilo y rendimiento, estos zapatos son el compañero perfecto para tus aventuras informales y actividades físicas. La parte superior confeccionada con malla y tejido sintético garantiza una mayor transpirabilidad para tus pies, mientras que el material interior textil acolchado y la lengüeta suave brindan comodidad en cada paso. El cierre de cordones ofrece un ajuste personalizado para tu vida diaria.",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_913888-MLB77413104637_072024-O.webp",
+      "price": 60,
+      "quantity": 10,
+      "rating": 4.2,
+      "category": "Deportivo"
+    },
+    {
+      "id": "5",
+      "name": "Adidas Vs Pace 2.0",
+      "description": "Usa ese nuevo truco que estabas esperando mostrar o simplemente relájate con estas zapatillas adidas. Se mantienen fieles a la herencia del skate con una parte superior de nobuk y una entresuela vulcanizada.",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_605074-MLB74325006339_012024-O.webp",
+      "price": 55,
+      "quantity": 62,
+      "rating": 4.2,
+      "category": "Deportivo"
+    },
+    {
+      "id": "6",
+      "name": "Adidas Alphaedge",
+      "description": "Diseño moderno, confort clásico y nuevos imprescindibles. Inspirado en las zapatillas de deporte de alto rendimiento, este par de adidas va más allá con una comodidad superior.",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_727432-MLB72160123727_102023-O.webp",
+      "price": 75,
+      "quantity": 29,
+      "rating": 4.2,
+      "category": "Deportivo"
+    },
+    {
+      "id": "7",
+      "name": "Adidas Lite Racer Adapt 5",
+      "description": "Las ya tradicionales Adidas Lite Racer llegan ahora en su tercera versión para aportar un extra de comodidad y estilo a tus días. Con un diseño deportivo, las zapatillas están fabricadas en material textil, altamente transpirable y se adaptan muy bien a la forma del pie",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_637571-MLB77759557886_072024-O.webp",
+      "price": 70,
+      "quantity": 20,
+      "rating": 4.2,
+      "category": "Deportivo"
+    },
+    {
+      "id": "8",
+      "name": "adidas Lite Racer 3.0",
+      "description": "Diseño moderno, confort clásico y nuevos imprescindibles. Inspirado en las zapatillas de deporte de alto rendimiento, este par de adidas va más allá con una comodidad superior.",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_880731-MLB70436099766_072023-O.webp",
+      "price": 80,
+      "quantity": 20,
+      "rating": 4.2,
+      "category": "Deportivo"
+    },
+    {
+      "id": "9",
+      "name": "Fila Recovery",
+      "description": "La Fila Recovery está inspirada en la línea FLOAT®, es la opción ideal para garantizar el máximo confort durante tu carrera. La parte superior de la zapatilla garantiza una excelente sujeción del pie gracias a la combinación de tejido Mesh y materiales fusionados.",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_708750-MLB77213816260_072024-O.webp",
+      "price": 45,
+      "quantity": 80,
+      "rating": 4.2,
+      "category": "Deportivo"
+    },
+    {
+      "id": "10",
+      "name": "Fila Euro Jogger",
+      "description": "Los Tenis Fila Euro Jogger están inspirados en un diseño retro, son ideales para el día a día y combinan con cualquier estilo por su versatilidad. Las zapatillas para correr con un look deportivo nunca pasan de moda. ",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_915733-MLA72801823458_112023-O.webp",
+      "price": 30,
+      "quantity": 20,
+      "rating": 4.2,
+      "category": "Deportivo"
+    },
+    {
+      "id": "6879",
+      "image": "https://http2.mlstatic.com/D_NQ_NP_979125-MLB78147406343_082024-O.webp",
+      "description": "El tenis Nike Air Jordan Travis Scott es una fusión explosiva de estilo icónico e innovación moderna, nació de la colaboración entre la marca Jordan y el artista visionario Travis Scott. Este modelo no es sólo un calcado, sino una verdadera obra de arte que trasciende como fronteras entre la moda y el deporte.",
+      "category": "Deportivo",
+      "quantity": 20,
+      "price": 80,
+      "name": "Air Jordan Travis"
+    }
+  ]
+}

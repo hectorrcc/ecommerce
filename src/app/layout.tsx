@@ -1,6 +1,16 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../styles/globals.css";
+import "primereact/resources/primereact.css";
+import "primeflex/primeflex.css";
+import "primeicons/primeicons.css";
+import "@/styles/demo/Demos.scss";
+import "@/styles/layout/layout.scss";
+
+
+import "primereact/resources/themes/lara-light-cyan/theme.css";
+
+import MenuBar from "../components/MenuBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +25,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        
+      </head>
+
+      <body className={inter.className}>
+        <MenuBar />
+        <div className='mt-24 px-10'>{children}</div>
+      </body>
     </html>
   );
 }
