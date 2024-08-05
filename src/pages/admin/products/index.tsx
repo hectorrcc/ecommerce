@@ -49,7 +49,7 @@ const Products = () => {
     },
   });
 
-  const imageBodyTemplate = useMemoizedFn ((rowData: Product) => {
+  const imageBodyTemplate = useMemoizedFn((rowData: Product) => {
     return (
       <Image
         src={`${rowData.image ? rowData.image : "/img/products/default.webp"}`}
@@ -60,7 +60,7 @@ const Products = () => {
         priority
       />
     );
-  })
+  });
   const priceBodyTemplate = useMemoizedFn((rowData: Product) => {
     return `$${rowData.price}`;
   });
@@ -107,10 +107,10 @@ const Products = () => {
       </div>
     );
   };
-  const handleVisible = () => {
+  const handleVisible = useMemoizedFn(() => {
     setEditPorduct(undefined);
     setVisible(true);
-  };
+  });
 
   return (
     <div className="col-12">

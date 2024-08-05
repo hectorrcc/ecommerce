@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "react-toastify/dist/ReactToastify.min.css";
 import "../styles/globals.css";
 import "primereact/resources/primereact.css";
 import "primeflex/primeflex.css";
@@ -7,10 +8,10 @@ import "primeicons/primeicons.css";
 import "@/styles/demo/Demos.scss";
 import "@/styles/layout/layout.scss";
 
-
 import "primereact/resources/themes/lara-light-cyan/theme.css";
 
 import MenuBar from "../components/MenuBar";
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,13 +27,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        
-      </head>
+      <head></head>
 
       <body className={inter.className}>
+        <ToastContainer
+          hideProgressBar={true}
+          theme="colored"
+          autoClose={1000}
+          position="top-center"
+        />
         <MenuBar />
-        <div className='mt-24 px-10'>{children}</div>
+        <div className="mt-24 px-10">{children}</div>
       </body>
     </html>
   );

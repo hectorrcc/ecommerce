@@ -23,11 +23,12 @@ const Page: GetServerSideProps = async (context) => {
   const product: Product = await getProduct(productId as string);
 
   return (
-    <div className="card">
+    <div id="productDetailPage" className="card">
       {product ? (
         <div className="grid ">
           <div className="col-6">
             <Image
+              priority={false}
               src={product.image ? product.image : `/img/products/default.webp`}
               width={600}
               height={300}

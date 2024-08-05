@@ -12,9 +12,14 @@ const ShoppingCarButton: NextPage<Props> = ({ type = "list" }: Props) => {
   return (
     <div>
       {type === "grid" ? (
-        <Button icon="pi pi-cart-plus" onClick={addShoppingCar} />
+        <Button
+          id="addShoppingCar"
+          icon="pi pi-cart-plus"
+          onClick={addShoppingCar}
+        />
       ) : (
         <Button
+          id="addShoppingCar"
           icon="pi pi-cart-plus"
           label="Add to Cart"
           size="small"

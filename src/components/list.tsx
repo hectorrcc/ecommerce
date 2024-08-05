@@ -10,10 +10,9 @@ import { InputText } from "primereact/inputtext";
 import Image from "next/image";
 import Spinner from "./Spinner";
 import Link from "next/link";
-import { useAtom } from "jotai";
-import { shoppingCarAtom } from "@/store/shopingCar.store";
-import { useShoppingCar } from "@/hooks/useShoppingCar";
 import ShoppingCarButton from "./ShoppingCarButton";
+import { useMemoizedFn } from "ahooks";
+import { ToastContainer } from "react-toastify";
 
 interface Prop {
   products: Product[];
@@ -30,7 +29,6 @@ const ListDemo = ({ products }: Prop) => {
   const [sortOrder, setSortOrder] = useState<0 | 1 | -1 | null>(null);
   const [sortField, setSortField] = useState("");
   const [loading, setLoading] = useState(true);
-  const {addShoppingCar} = useShoppingCar()
 
   const sortOptions = [
     { label: "Precio de alto a bajo", value: "!price" },
@@ -42,7 +40,7 @@ const ListDemo = ({ products }: Prop) => {
     setLoading(false);
   }, [products]);
 
-  const onFilter = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const onFilter = useMemoizedFn((e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setGlobalFilterValue(value);
     if (value.length === 0) {
@@ -56,9 +54,9 @@ const ListDemo = ({ products }: Prop) => {
 
       setFilteredValue(filtered);
     }
-  };
+  });
 
-  const onSortChange = (event: DropdownChangeEvent) => {
+  const onSortChange = useMemoizedFn((event: DropdownChangeEvent) => {
     const value = event.value;
 
     if (value.indexOf("!") === 0) {
@@ -70,7 +68,7 @@ const ListDemo = ({ products }: Prop) => {
       setSortField(value);
       setSortKey(value);
     }
-  };
+  });
 
   const dataViewHeader = (
     <div className="flex flex-column md:flex-row md:justify-content-between gap-2">
@@ -82,7 +80,6 @@ const ListDemo = ({ products }: Prop) => {
         onChange={onSortChange}
       />
       <span className="p-input-icon-left">
-        
         <InputText
           value={globalFilterValue}
           onChange={onFilter}
@@ -96,11 +93,12 @@ const ListDemo = ({ products }: Prop) => {
     </div>
   );
 
-  const dataviewListItem = (data: Product) => {
+  const dataviewListItem = useMemoizedFn((data: Product) => {
     return (
       <div className="col-12">
         <div className="flex flex-column md:flex-row align-items-center p-3 w-full">
           <Image
+            priority={false}
             width={600}
             height={150}
             src={`${data.image ? data.image : "/img/products/default.webp"}`}
@@ -125,14 +123,14 @@ const ListDemo = ({ products }: Prop) => {
             <span className="text-2xl font-semibold mb-2 align-self-center md:align-self-end">
               ${data.price}
             </span>
-            <ShoppingCarButton type="list"/>
+            <ShoppingCarButton type="list" />
           </div>
         </div>
       </div>
     );
-  };
+  });
 
-  const dataviewGridItem = (data: Product) => {
+  const dataviewGridItem = useMemoizedFn((data: Product) => {
     return (
       <div className="col-12 lg:col-4">
         <div className="card m-3 border-1 surface-border">
@@ -144,6 +142,7 @@ const ListDemo = ({ products }: Prop) => {
           </div>
           <div className="flex flex-column align-items-center text-center mb-3">
             <Image
+              priority={false}
               width={400}
               height={150}
               src={`${data.image ? data.image : "/img/products/default.webp"}`}
@@ -156,31 +155,33 @@ const ListDemo = ({ products }: Prop) => {
           </div>
           <div className="flex align-items-center justify-content-between">
             <span className="text-2xl font-semibold">${data.price}</span>
-            <Link href={`/products/${data.id}`}>
-              <Button severity="secondary" outlined icon="pi pi-eye"  />
+            <Link id="productDetail" href={`/products/${data.id}`}>
+              <Button severity="secondary" outlined icon="pi pi-eye" />
             </Link>
 
-            <ShoppingCarButton type="grid"/>
+            <ShoppingCarButton type="grid" />
           </div>
         </div>
       </div>
     );
-  };
+  });
 
-  const itemTemplate = (
-    data: Product,
-    layout: "grid" | "list" | (string & Record<string, unknown>)
-  ) => {
-    if (!data) {
-      return;
-    }
+  const itemTemplate = useMemoizedFn(
+    (
+      data: Product,
+      layout: "grid" | "list" | (string & Record<string, unknown>)
+    ) => {
+      if (!data) {
+        return;
+      }
 
-    if (layout === "list") {
-      return dataviewListItem(data);
-    } else if (layout === "grid") {
-      return dataviewGridItem(data);
+      if (layout === "list") {
+        return dataviewListItem(data);
+      } else if (layout === "grid") {
+        return dataviewGridItem(data);
+      }
     }
-  };
+  );
 
   return (
     <>
