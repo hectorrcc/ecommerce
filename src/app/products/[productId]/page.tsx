@@ -1,27 +1,22 @@
 // pages/product/[id].tsx
 
 import ShoppingCarButton from "@/components/ShoppingCarButton";
-import { GetServerSideProps } from "next";
+import type { GetServerSidePropsContext } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "primereact/button";
 import { Rating } from "primereact/rating";
+import { ParsedUrlQuery } from "querystring";
 
-async function getProduct(id: string) {
-  try {
-    const response = await fetch(`http://localhost:4000/products/${id}`);
-    const result = await response.json();
-    return result;
-  } catch (error) {
-    console.log(error);
-  }
+interface Prop {
+  product: Product;
 }
 
-const Page: GetServerSideProps = async (context) => {
+const Page = async (context: GetServerSidePropsContext<ParsedUrlQuery>) => {
   const { productId } = context.params!;
 
-  const product: Product = await getProduct(productId as string);
-
+  const response = await fetch(`http://localhost:4000/products/${productId}`);
+  const product = await response.json();
   return (
     <div id="productDetailPage" className="card">
       {product ? (
